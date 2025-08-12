@@ -38,6 +38,5 @@ let package = Package(
 
         // A client of the library, which is able to use the macro in its own code.
         .executableTarget(name: "SwiftMacrosClient", dependencies: ["SwiftMacros"]),
-
     ]
 )

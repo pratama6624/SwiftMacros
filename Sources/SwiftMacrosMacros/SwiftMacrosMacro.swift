@@ -29,5 +29,6 @@ public struct StringifyMacro: ExpressionMacro {
 struct SwiftMacrosPlugin: CompilerPlugin {
     let providingMacros: [Macro.Type] = [
         StringifyMacro.self,
+        AutoDescriptionMacro.self
     ]
 }
