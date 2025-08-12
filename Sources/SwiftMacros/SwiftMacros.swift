@@ -16,3 +16,10 @@ public macro AutoDescription() = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "AutoDescriptionMacro"
 )
+
+// Custom Description
+@attached(member, names: named(customDescription))
+public macro CustomDescription() = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "CustomDescriptionMacro"
+)
