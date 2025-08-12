@@ -8,7 +8,10 @@
 ///
 /// produces a tuple `(x + y, "x + y")`.
 @freestanding(expression)
-public macro stringify<T>(_ value: T) -> (T, String) = #externalMacro(module: "SwiftMacrosMacros", type: "StringifyMacro")
+public macro stringify<T>(_ value: T) -> (T, String) = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "StringifyMacro"
+)
 
 // Auto Description
 @attached(member, names: named(description))
