@@ -8,6 +8,7 @@
 import SwiftMacros
 
 @AutoDescription
+@AutoCodable
 struct User {
     let name: String
     let age: Int

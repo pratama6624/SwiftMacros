@@ -45,3 +45,11 @@ public macro compileTimeInfo(_ message: String) -> String = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "CompileTimeInfoMacro"
 )
+
+// Attached Macros
+// Auto Codable
+@attached(extension, conformances: Codable)
+public macro AutoCodable() = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "AutoCodableMacro"
+)

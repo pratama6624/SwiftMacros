@@ -32,6 +32,7 @@ struct SwiftMacrosPlugin: CompilerPlugin {
         AutoDescriptionMacro.self,
         CustomDescriptionMacro.self,
         AppInfoMacro.self,
-        CompileTimeInfoMacro.self
+        CompileTimeInfoMacro.self,
+        AutoCodableMacro.self
     ]
 }

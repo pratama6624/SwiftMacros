@@ -5,6 +5,7 @@
 //  Created by Pratama One on 11/08/25.
 //
 
+import Foundation
 import SwiftMacros
 
 @main
@@ -32,6 +33,18 @@ struct MyApp {
         // Free Standing Macro -> Compile Time Info
         print("\nFree Standing Macro -> Compile Time Info")
         print(#compileTimeInfo("Testing compile time info"))
+        
+        // Attached Macros -> Auto Codable
+        print("\nAttached Macros -> Auto Codable")
+        let me = User(name: "Young", age: 24)
+        // Encode struct
+        let encoded = try! JSONEncoder().encode(me)
+        print(String(data: encoded, encoding: .utf8))
+        // Decode balik hasil encode
+        let decodeUser = try! JSONDecoder().decode(User.self, from: encoded)
+        print(decodeUser)
+        print(decodeUser.name)
+        print(decodeUser.age)
         
         print("\n")
     }
