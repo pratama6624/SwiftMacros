@@ -7,6 +7,9 @@
 ///     #stringify(x + y)
 ///
 /// produces a tuple `(x + y, "x + y")`.
+
+/// Simple Free Standing Macro
+/// Easy Level
 @freestanding(expression)
 public macro stringify<T>(_ value: T) -> (T, String) = #externalMacro(
     module: "SwiftMacrosMacros",
@@ -25,4 +28,20 @@ public macro AutoDescription() = #externalMacro(
 public macro CustomDescription() = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "CustomDescriptionMacro"
+)
+
+// Medium level
+// FreeStandingMacro -> Generated Function (Just Print App Info)
+@freestanding(expression)
+public macro generatedAppinfo(_ name: String, _ version: Int) = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "AppInfoMacro"
+)
+
+// Advanced Level
+// FreeStandingMacro -> Compile Time Info
+@freestanding(expression)
+public macro compileTimeInfo(_ message: String) -> String = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "CompileTimeInfoMacro"
 )

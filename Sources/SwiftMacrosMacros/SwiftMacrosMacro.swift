@@ -30,6 +30,8 @@ struct SwiftMacrosPlugin: CompilerPlugin {
     let providingMacros: [Macro.Type] = [
         StringifyMacro.self,
         AutoDescriptionMacro.self,
-        CustomDescriptionMacro.self
+        CustomDescriptionMacro.self,
+        AppInfoMacro.self,
+        CompileTimeInfoMacro.self
     ]
 }
