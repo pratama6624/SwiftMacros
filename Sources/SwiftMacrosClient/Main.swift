@@ -46,6 +46,12 @@ struct MyApp {
         print(decodeUser.name)
         print(decodeUser.age)
         
+        // Attached Macros -> Auto Init
+        print("\nAttached Macros -> Auto Init")
+        let young = User(name: "Young", age: 24)
+        print(young.name)
+        print(young.age)
+        
         print("\n")
     }
 }

@@ -7,8 +7,9 @@
 
 import SwiftMacros
 
-@AutoDescription
-@AutoCodable
+@AutoDescriptionMacro
+@AutoCodableMacro
+@AutoInitMacro
 struct User {
     let name: String
     let age: Int

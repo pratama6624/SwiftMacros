@@ -18,14 +18,14 @@ public macro stringify<T>(_ value: T) -> (T, String) = #externalMacro(
 
 // Auto Description
 @attached(member, names: named(description))
-public macro AutoDescription() = #externalMacro(
+public macro AutoDescriptionMacro() = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "AutoDescriptionMacro"
 )
 
 // Custom Description
 @attached(member, names: named(customDescription))
-public macro CustomDescription() = #externalMacro(
+public macro CustomDescriptionMacro() = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "CustomDescriptionMacro"
 )
@@ -49,7 +49,15 @@ public macro compileTimeInfo(_ message: String) -> String = #externalMacro(
 // Attached Macros
 // Auto Codable
 @attached(extension, conformances: Codable)
-public macro AutoCodable() = #externalMacro(
+public macro AutoCodableMacro() = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "AutoCodableMacro"
+)
+
+// Attached Macros
+// Auto Init
+@attached(member, names: named(init))
+public macro AutoInitMacro() = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "AutoInitMacro"
 )

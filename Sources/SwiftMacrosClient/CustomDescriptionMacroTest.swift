@@ -7,7 +7,7 @@
 
 import SwiftMacros
 
-@CustomDescription
+@CustomDescriptionMacro
 struct Car {
     let make: String
     let model: String
