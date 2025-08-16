@@ -59,6 +59,10 @@ struct MyApp {
         mappingUser.map(from: dict)
         print(mappingUser)
         
+        // Freestanding Macros -> Auto Logging
+        print("\nFreestanding Macros -> Auto Logging")
+        let service = UserService()
+        print(service.login(username: "admin", password: "123"))
         
         print("\n")
     }

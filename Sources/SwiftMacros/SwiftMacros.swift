@@ -69,3 +69,11 @@ public macro AutoPropertyMapping() = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "PropertyMappingMacro"
 )
+
+// Freestanding Macros
+// Auto Logging
+@freestanding(expression)
+public macro AutoLog(_ functionName: String) -> Void = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "AutoLogMacro"
+)
