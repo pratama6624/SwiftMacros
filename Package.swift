@@ -6,7 +6,13 @@ import CompilerPluginSupport
 
 let package = Package(
     name: "SwiftMacros",
-    platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13), .watchOS(.v6), .macCatalyst(.v13)],
+    platforms: [
+            .macOS(.v13),
+            .iOS(.v17),   // 🔥 update ke versi tinggi sesuai iOS 18 beta
+            .tvOS(.v17),
+            .watchOS(.v10),
+            .macCatalyst(.v17)
+        ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -38,5 +44,11 @@ let package = Package(
 
         // A client of the library, which is able to use the macro in its own code.
         .executableTarget(name: "SwiftMacrosClient", dependencies: ["SwiftMacros"]),
+        
+//        .executableTarget(
+//                name: "SwiftMacrosUIClient",
+//                dependencies: ["SwiftMacros"],
+//                path: "Sources/SwiftMacrosUIClient"
+//            )
     ]
 )

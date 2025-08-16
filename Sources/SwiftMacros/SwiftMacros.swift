@@ -85,3 +85,11 @@ public macro AutoTracingMacro() = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "AutoTracingMacro"
 )
+
+// Attached Macros
+// Auto Binding UI
+@attached(member, names: named($property))
+public macro AutoBindMacro() = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "AutoBindMacro"
+)

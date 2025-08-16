@@ -37,6 +37,7 @@ struct SwiftMacrosPlugin: CompilerPlugin {
         AutoInitMacro.self,
         PropertyMappingMacro.self,
         AutoLogMacro.self,
-        AutoTracingMacro.self
+        AutoTracingMacro.self,
+        AutoBindMacro.self
     ]
 }
