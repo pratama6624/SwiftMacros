@@ -77,3 +77,11 @@ public macro AutoLog(_ functionName: String) -> Void = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "AutoLogMacro"
 )
+
+// Attached Macros
+// Auto Tracing Func
+@attached(peer, names: suffixed(_traced))
+public macro AutoTracingMacro() = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "AutoTracingMacro"
+)

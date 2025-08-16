@@ -64,6 +64,11 @@ struct MyApp {
         let service = UserService()
         print(service.login(username: "admin", password: "123"))
         
+        // Attached Macros -> Auto Tracing Func
+        print("\nAttached Macros -> Auto Tracing Func")
+        var tracingUser = User(name: "Pratama", age: 26)
+        print(tracingUser.sayHello(name: "Young"))
+        
         print("\n")
     }
 }

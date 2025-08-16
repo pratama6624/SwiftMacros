@@ -14,6 +14,11 @@ import SwiftMacros
 struct User {
     var name: String
     var age: Int
+    
+    @AutoTracingMacro
+    public func sayHello(name: String) -> String {
+        return "Hello, \(name)!"
+    }
 }
 
 struct UserService {
