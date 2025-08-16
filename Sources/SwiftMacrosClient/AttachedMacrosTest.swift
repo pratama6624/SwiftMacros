@@ -10,7 +10,8 @@ import SwiftMacros
 @AutoDescriptionMacro
 @AutoCodableMacro
 @AutoInitMacro
+@AutoPropertyMapping
 struct User {
-    let name: String
-    let age: Int
+    var name: String
+    var age: Int
 }

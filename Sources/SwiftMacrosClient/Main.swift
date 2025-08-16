@@ -52,6 +52,14 @@ struct MyApp {
         print(young.name)
         print(young.age)
         
+        // Attached Macros -> Auto Property Mapping
+        print("\nAttached Macros -> Auto Property Mapping")
+        var mappingUser = User(name: "Pratama", age: 26)
+        let dict: [String: Any] = ["name": "Doni", "age": 30]
+        mappingUser.map(from: dict)
+        print(mappingUser)
+        
+        
         print("\n")
     }
 }

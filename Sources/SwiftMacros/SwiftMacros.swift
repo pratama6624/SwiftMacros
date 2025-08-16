@@ -61,3 +61,11 @@ public macro AutoInitMacro() = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "AutoInitMacro"
 )
+
+// Attached Macros
+// Properti Mapping
+@attached(member, names: named(map(from:)))
+public macro AutoPropertyMapping() = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "PropertyMappingMacro"
+)
