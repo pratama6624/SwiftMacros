@@ -69,6 +69,15 @@ struct MyApp {
         var tracingUser = User(name: "Pratama", age: 26)
         print(tracingUser.sayHello(name: "Young"))
         
+        // Attached Macros -> Auto Property Wrapper
+        print("\nAttached Macros -> Auto Property Wrapper")
+        var wrapperUser = UserData()
+        wrapperUser.name = "Young"
+        print(wrapperUser.name)
+        wrapperUser.name = "One"
+        print(wrapperUser.name)
+        
+        
         print("\n")
     }
 }

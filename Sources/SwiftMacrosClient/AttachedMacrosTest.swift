@@ -28,3 +28,10 @@ struct UserService {
         return username == "admin" && password == "123"
     }
 }
+
+@AutoPropertyWrapperMacro
+struct UserData {
+    @Logged var name: String = "Pratama"
+    @Logged var age: Int = 25
+}
+

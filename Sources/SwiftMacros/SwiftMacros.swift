@@ -93,3 +93,11 @@ public macro AutoBindMacro() = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "AutoBindMacro"
 )
+
+// Attached Macros
+// Auto Property Wrapper
+@attached(member, names: named(Logged))
+public macro AutoPropertyWrapperMacro() = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "AutoPropertyWrapperMacro"
+)
