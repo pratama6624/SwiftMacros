@@ -6,6 +6,7 @@
 //
 
 import SwiftMacros
+import XCTest
 
 @AutoDescriptionMacro
 @AutoCodableMacro
@@ -33,5 +34,12 @@ struct UserService {
 struct UserData {
     @Logged var name: String = "Pratama"
     @Logged var age: Int = 25
+}
+
+@AutoGenerateTestMacro
+struct Product {
+    let id: Int
+    var name: String
+    var price: Double
 }
 

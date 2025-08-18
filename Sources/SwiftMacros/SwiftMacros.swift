@@ -101,3 +101,11 @@ public macro AutoPropertyWrapperMacro() = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "AutoPropertyWrapperMacro"
 )
+
+// Attached Macros
+// Auto Generated Code For Tests
+@attached(peer, names: suffixed(Tests))
+public macro AutoGenerateTestMacro() = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "AutoGenerateTestMacro"
+)

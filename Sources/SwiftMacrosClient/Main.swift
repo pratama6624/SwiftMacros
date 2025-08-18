@@ -77,6 +77,9 @@ struct MyApp {
         wrapperUser.name = "One"
         print(wrapperUser.name)
         
+        // Attached Macros -> Auto Generated Code For Tests
+        // print("\nAttached Macros -> Auto Generated Code For Tests")
+        // var product = Product(id: 1, name: "IPhone 16", price: 13_000_000.0)
         
         print("\n")
     }

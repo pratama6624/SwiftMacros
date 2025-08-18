@@ -5,3 +5,78 @@
 //  Created by Pratama One on 13/08/25.
 //
 
+import SwiftSyntax
+import SwiftSyntaxBuilder
+import SwiftCompilerPlugin
+import SwiftDiagnostics
+import SwiftSyntaxMacros
+
+public struct AutoGenerateTestMacro: PeerMacro {
+    public static func expansion(
+        of node: AttributeSyntax,
+        providingPeersOf decl: some DeclSyntaxProtocol,
+        in context: some MacroExpansionContext
+    ) throws -> [DeclSyntax] {
+        guard let structDecl = decl.as(StructDeclSyntax.self) else {
+            return []
+        }
+        
+        let structName = structDecl.name.text
+        let testClassName = "\(structName)Tests"
+        
+        // Get all properties with their types
+        let properties: [(name: String, type: String)] = structDecl.memberBlock.members.compactMap { member in
+            guard let varDecl = member.decl.as(VariableDeclSyntax.self),
+                  let binding = varDecl.bindings.first,
+                  let pattern = binding.pattern.as(IdentifierPatternSyntax.self),
+                  let typeAnnotation = binding.typeAnnotation else {
+                return nil
+            }
+            let propName = pattern.identifier.text
+            let typeName = typeAnnotation.type.description.trimmingCharacters(in: .whitespacesAndNewlines)
+            return (propName, typeName)
+        }
+        
+        // Generate dummy variable declarations for known types
+        var dummyVarDeclarations = ""
+        for (name, type) in properties {
+            switch type {
+            case "Int":
+                dummyVarDeclarations += "        let \(name) = 42\n"
+            case "Double":
+                dummyVarDeclarations += "        let \(name) = 123.45\n"
+            case "String":
+                dummyVarDeclarations += #"        let \#(name) = "example""# + "\n"
+            default:
+                // Skip unknown types for now
+                break
+            }
+        }
+        
+        // Filter properties to only those with known dummy variable declarations
+        let knownProperties = properties.filter { prop in
+            ["Int", "Double", "String"].contains(prop.type)
+        }
+        
+        // Generate struct initialization argument list
+        let initArgs = knownProperties.map { "\($0.name): \($0.name)" }.joined(separator: ", ")
+        
+        // Generate assertions
+        var initAssertions = ""
+        for prop in knownProperties {
+            initAssertions += "        XCTAssertEqual(\(structName.lowercased()).\(prop.name), \(prop.name))\n"
+        }
+        
+        let testCode: DeclSyntax =
+        """
+            final class \(raw: testClassName): XCTestCase {
+                func testInit() {
+        \(raw: dummyVarDeclarations.replacingOccurrences(of: "^", with: "            ", options: .regularExpression, range: nil))            let \(raw: structName.lowercased()) = \(raw: structName)(\(raw: initArgs))
+        \(raw: initAssertions.replacingOccurrences(of: "^", with: "            ", options: .regularExpression, range: nil))        }
+            }
+        """
+        
+        return [testCode]
+    }
+}
+
