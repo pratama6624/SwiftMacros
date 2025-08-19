@@ -48,3 +48,5 @@ protocol TestMacroMock {
     func login(username: String, password: String) -> Bool
     func logout()
 }
+
+

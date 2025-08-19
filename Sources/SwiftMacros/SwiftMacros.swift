@@ -117,3 +117,12 @@ public macro AutoGereratedMock() = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "AutoGereratedCodeForMockingMacro"
 )
+
+// Attached Macros
+// Free sample from apple swift documentation
+@attached(member, names: arbitrary)
+@attached(extension, conformances: OptionSet)
+public macro OptionSet<RawType>() = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "OptionSetMacro"
+)
