@@ -36,10 +36,15 @@ struct UserData {
     @Logged var age: Int = 25
 }
 
-@AutoGenerateTestMacro
+//@AutoGenerateTestMacro
 struct Product {
     let id: Int
     var name: String
     var price: Double
 }
 
+@AutoGereratedMock
+protocol TestMacroMock {
+    func login(username: String, password: String) -> Bool
+    func logout()
+}

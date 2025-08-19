@@ -109,3 +109,11 @@ public macro AutoGenerateTestMacro() = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "AutoGenerateTestMacro"
 )
+
+// Attached Macros
+// Auto Generated Code For Mocking Test
+@attached(peer, names: prefixed(Mock))
+public macro AutoGereratedMock() = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "AutoGereratedCodeForMockingMacro"
+)
