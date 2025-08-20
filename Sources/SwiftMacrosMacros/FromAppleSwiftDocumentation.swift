@@ -38,7 +38,7 @@ public struct OptionSetMacro: MemberMacro, ExtensionMacro {
             .compactMap({ $0.decl.as(EnumDeclSyntax.self) })
             .first(where: { $0.name.text == "Options" })
         {
-        for (i, c) in optionsEnum.memberBlock.members
+            for (_, c) in optionsEnum.memberBlock.members
             .compactMap({ $0.decl.as(EnumCaseDeclSyntax.self) })
             .flatMap({ $0.elements })
             .enumerated()

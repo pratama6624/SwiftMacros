@@ -8,7 +8,7 @@ let package = Package(
     name: "SwiftMacros",
     platforms: [
             .macOS(.v13),
-            .iOS(.v17),   // 🔥 update ke versi tinggi sesuai iOS 18 beta
+            .iOS(.v17), // 🔥 Update iOS 26 Beta
             .tvOS(.v17),
             .watchOS(.v10),
             .macCatalyst(.v17)

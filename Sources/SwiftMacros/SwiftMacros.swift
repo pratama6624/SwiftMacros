@@ -126,3 +126,10 @@ public macro OptionSet<RawType>() = #externalMacro(
     module: "SwiftMacrosMacros",
     type: "OptionSetMacro"
 )
+
+// Apple Documentation -> How to use macros from zero to hero
+@freestanding(expression)
+public macro fourCharacterCode(_ string: StaticString) -> UInt32 = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "FourCharacterCode"
+)

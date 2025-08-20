@@ -66,7 +66,7 @@ struct MyApp {
         
         // Attached Macros -> Auto Tracing Func
         print("\nAttached Macros -> Auto Tracing Func")
-        var tracingUser = User(name: "Pratama", age: 26)
+        let tracingUser = User(name: "Pratama", age: 26)
         print(tracingUser.sayHello(name: "Young"))
         
         // Attached Macros -> Auto Property Wrapper
@@ -80,6 +80,11 @@ struct MyApp {
         // Attached Macros -> Auto Generated Code For Tests
         // print("\nAttached Macros -> Auto Generated Code For Tests")
         // var product = Product(id: 1, name: "IPhone 16", price: 13_000_000.0)
+        
+        // Apple Swift Documentation -> How to use macros from zero to hero
+        print("\nOfficial Documentation from apple (swift) -> How to use macros from zero to hero")
+        let code: UInt32 = #fourCharacterCode("ABCD")
+        print(code) // 1094861636
         
         print("\n")
     }

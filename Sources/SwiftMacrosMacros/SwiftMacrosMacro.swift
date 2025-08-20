@@ -42,6 +42,7 @@ struct SwiftMacrosPlugin: CompilerPlugin {
         AutoPropertyWrapperMacro.self,
         AutoGenerateTestMacro.self,
         AutoGereratedCodeForMockingMacro.self,
-        OptionSetMacro.self
+        OptionSetMacro.self,
+        FourCharacterCode.self
     ]
 }
