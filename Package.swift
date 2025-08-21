@@ -50,5 +50,16 @@ let package = Package(
 //                dependencies: ["SwiftMacros"],
 //                path: "Sources/SwiftMacrosUIClient"
 //            )
+        
+        // TESTS
+        .testTarget(
+            name: "SwiftMacrosMacrosTests",
+            dependencies: [
+                "SwiftMacrosMacros",
+                .product(name: "SwiftSyntax", package: "swift-syntax"),
+                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
+                .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
+            ]
+        ),
     ]
 )

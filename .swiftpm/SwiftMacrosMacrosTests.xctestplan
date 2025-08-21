@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "57B5F8D5-1AE7-407A-8834-B89616150228",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "SwiftMacrosMacrosTests",
+        "name" : "SwiftMacrosMacrosTests"
+      }
+    }
+  ],
+  "version" : 1
+}
