@@ -86,6 +86,13 @@ struct MyApp {
         let code: UInt32 = #fourCharacterCode("ABCD")
         print(code) // 1094861636
         
+        // Attached Macros -> Auto Validation
+        print("\nAttached Macros -> Auto Validation")
+        let user1 = User(name: "Pratama", age: 26)
+        print(user1.validate())
+        let user2 = User(name: "", age: 25)
+        print(user2.validate())
+        
         print("\n")
     }
 }

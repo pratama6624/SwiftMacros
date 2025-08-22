@@ -133,3 +133,11 @@ public macro fourCharacterCode(_ string: StaticString) -> UInt32 = #externalMacr
     module: "SwiftMacrosMacros",
     type: "FourCharacterCode"
 )
+
+// Attached Macros
+// Auto validation
+@attached(member, names: named(validate))
+public macro AutoValidate() = #externalMacro(
+    module: "SwiftMacrosMacros",
+    type: "AutoValidateMacro"
+)

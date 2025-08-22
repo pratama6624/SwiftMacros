@@ -12,6 +12,7 @@ import XCTest
 @AutoCodableMacro
 @AutoInitMacro
 @AutoPropertyMapping
+@AutoValidate
 struct User {
     var name: String
     var age: Int
